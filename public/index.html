@@ -13,23 +13,46 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
+<!-- Constants -->
+<script type="text/javascript">
+	// Brand Links
+	const SpotifyURL = "https://open.spotify.com/show/0LG7yxZXVmrVH7DiaWuyYG";
+	const YoutubeURL = "https://www.youtube.com/@TheDiceMakers";
+	const InstagramURL = "https://www.youtube.com/watch?v=Aq5WXmQQooo";
+
+	// Latest Episode
+	const LatestYoutubeURL = "https://www.youtube.com/@TheDiceMakers";
+	const LatestSpotifyURL = "https://open.spotify.com/show/0LG7yxZXVmrVH7DiaWuyYG";
+
+	// Website Pages
+	const Pages = {
+		Home: "home",
+		Episodes: "episodes",
+		About: "about",
+	};
+</script>
+
 <style>
 	:root {
-		--color-base: #383a7e;
-		--color-light: #5569a7;
-		--color-lighter: #9aafd3;
+		--color-base: #3c455e;
+		--color-light: #7284af;
+		--color-lighter: #d6d4ce;
 		--color-dark: #8d4764;
 		--color-darker: #5e3141;
-		--color-text: white;
+		--color-text: #6b6661;
+		--color-text-light: #d6d4ce;
 		--color-text-dark: black;
 
-		--title-shadow: #030303 2px 2px 0px
+		--title-shadow: #030303 2px 2px 0px;
+
+		--font-body: "Roboto", sans-serif;
+		--font-title: "Bebas Neue", sans-serif;
 	}
 
 	body {
 		background-color: var(--color-base);
 		color: var(--color-text);
-		font-family: "Roboto", sans-serif;
+		font-family: var(--font-body);
 		font-weight: 400;
 		font-style: normal;
 	}
@@ -51,16 +74,69 @@
 		margin: 0;
 	}
 
-	#page_header {
-		padding: 20px;
+	.page-header {
 		background-color: var(--color-base);
 	}
 
-	.title {
-		font-family: "Bebas Neue", sans-serif;
+	.page-header-bar {
+		background-color: var(--color-light);
+		height: 3px;
+	}
+
+	.nav-links {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+	}
+
+	.nav-links>ul {
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.nav-links>ul>li {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.nav-links>ul>li>button {
+		padding: 10px;
+		margin-right: 5px;
+		background-color: transparent;
+		border: none;
+
+		color: var(--color-text-light);
+		font-family: var(--font-body);
+		font-weight: 500;
+		font-style: normal;
+		font-size: 1em;
+		cursor: pointer;
+	}
+
+	.nav-links>ul>li>button:hover {
+		background-color: var(--color-light);
+	}
+
+	.nav-link-img {
+		height: 1.5em;
+	}
+
+	.page-title {
+		background-color: var(--color-base);
+		border: none;
+		cursor: pointer;
+	}
+
+	.page-title>h1 {
+		font-family: var(--font-title);
 		font-weight: 400;
 		font-style: normal;
-		font-size: 300%;
+		font-size: 3em;
 		text-align: center;
 		color: var(--color-lighter);
 		text-shadow: var(--title-shadow);
@@ -70,73 +146,71 @@
 		font-size: 150%;
 	}
 
-	.no-shadow {
-		text-shadow: none !important;
-	}
-
-	.page-trailer {
+	.page-section {
+		width: 100%;
 		margin: 0px;
 		padding: 0px;
-		width: 100%;
-		display: grid;
-		height: fit-content;
-	}
-
-	.page-trailer>.bg-img {
-		grid-area: 1/1;
-		grid-column: 0;
-		grid-row: 0;
-		margin: 0px;
-		padding: 0px;
-		width: 100%;
-		position: absolute;
-		z-index: -10;
-	}
-
-	.page-trailer>.trailer-content {
-		grid-area: 1/1;
-		grid-column: 0;
-		grid-row: 0;
-		color: var(--color-text-dark);
-		margin: 30px
-	}
-
-	.page-trailer>*>.description {
-		background-color: rgba(256, 256, 256, 0.5);
-		border-radius: 10px;
-		margin: 50px;
-		padding: 10px;
-		max-width: 300px;
-	}
-
-	#page-contents {
-		background-color: var(--color-light);
-		padding-top: 20px;
-		flex-grow: 1;
-		justify-content: center;
-		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	#page_footer {
+	.page-section-mapbg {
+		background: url(./bg_map.png);
+		background-size: cover;
+	}
+
+	.page-section-gridbg {
+		background: url(./bg_grid.png);
+		background-size: cover;
+	}
+
+	.page-section-default {
+		background-color: var(--color-base);
+		color: var(--color-text-light);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#page-contents {
+		margin: 0px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.page-footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		padding: 20px;
 		background-color: var(--color-base);
+		color: var(--color-text-light);
 	}
 
 	.section-title {
-		font-family: "Bebas Neue", sans-serif;
+		color: var(--color-text-light);
+		font-family: var(--font-title);
 		font-weight: 400;
 		font-style: normal;
 		font-size: 250%;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		text-shadow: var(--title-shadow);
+	}
+
+	.section-title-dark {
+		color: var(--color-text);
 	}
 
 	.dm-episode {
-		background-color: var(--color-base);
+		/* background-color: var(--color-light); */
+		background: url("bg_grid.png");
+		background-size: cover;
+		color: var(--color-text);
 		min-width: 600px;
 		width: 700px;
 
@@ -144,9 +218,9 @@
 		flex-direction: column;
 		align-items: center;
 
-		margin: 10px;
+		margin: 5px;
 		border-radius: 20px;
-		padding: 10px;
+		padding: 20px;
 	}
 
 	.dm-episode-player {
@@ -171,76 +245,80 @@
 		padding: 5px;
 	}
 
-	.copyright {
-		text-align: center;
-		color: var(--color-lighter)
+	.horizontal-line {
+		height: 2px;
+		width: 35%;
+		background-color: var(--color-text-light);
 	}
-</style>
 
-<!-- Josh's Fancy Triangles -->
-<style>
-	.triangle {
-		width: 40px;
-		height: 40px;
-		background: var(--color-darker);
-		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	.copyright {
+		margin-top: 10px;
+		text-align: center;
+		color: var(--color-text-light)
 	}
 </style>
 
 <body id="root">
 	<!-- Header Bar -->
-	<header id="page_header">
-		<h1 class="title">Dice Makers</h1>
-		<p class="title subtitle">Roll with Guidance</p>
-	</header>
-
-	<!-- Section: Trailer & Info -->
-	<div class="page-trailer">
-		<img class="bg-img" src="GridBackground.png" alt=""></img>
-		<div class="trailer-content"
-			style="display: flex; flex-direction: row; align-items: center; justify-self: center;">
-			<div class="description">
-				<h1 class="section-title no-shadow">The Design Podcast</h1>
-				<p>Here is a bunch of text that Terran will write describing just how awesome we are and how much you
-					should listen to our podcast. If you are seeing this, Terran has some work to do. If you are
-					Terran... stop reading this and get back to work.</p>
-			</div>
-			<div>
-				<iframe width="300" height="300" src="https://www.youtube.com/embed/WynRfLMKgRw?si=z0Ggtf_gfTZPkFeU"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</div>
+	<header class="page-header" style="display: flex; justify-content: center;">
+		<div style="display: flex;">
+			<button class="page-title" onclick="changePage(Pages.Home)">
+				<h1 style="align-self: flex-end;">Dice Makers</h1>
+			</button>
 		</div>
-	</div>
+		<nav class="nav-links" style="padding-left: 100px;">
+			<ul>
+				<li><button onclick="changePage(Pages.Home)">Home</button></li>
+				<li><button onclick="changePage(Pages.Episodes)">Episodes</button></li>
+				<li><button onclick="changePage(Pages.About)">About</button></li>
+				<li><button onclick="openLink(SpotifyURL)">
+						<img class="nav-link-img" src="./logo_spotify_small.png"></img>
+					</button></li>
+				<li><button onclick="openLink(InstagramURL)">
+						<img class="nav-link-img" src="./logo_instagram_small.png"></img>
+					</button></li>
+				<li><button onclick="openLink(YoutubeURL)">
+						<img class="nav-link-img" src="./logo_youtube_small.png"></img>
+					</button></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="page-header-bar"></div>
 
-	<!-- Section: Episodes List -->
+	<!-- Page Contents -->
 	<main id="page-contents">
-		<h2 class="section-title">Latest Episode</h2>
-		<dm-episode title="Robots: All the fun of genocide."
-			description="A Narrative episode where Josh and Terran brainstorm ideas for the world and lore. Josh wants to cut off limbs, Terran wants to kill humanity."
-			spotify="0vVdRJQel7k0zYrSsmZZP4"></dm-episode>
-
-		<dm-episode title="The Non-Combat Episode"
-			description="Josh and Terran explore if combat is required for ttrpg's and how non-combat encounters can be implemented."
-			spotify="3RFhZh6QWMoma1GK5Lxuyj"></dm-episode>
-
-		<dm-episode title="Narratives: Anything is Masterable"
-			description="Josh and Terran talk about what narrative they want to tell with their game system, talk about an alternative leveling system, and the idea of multiple eras."
-			spotify="63qUqrrWzgsoCR5ATEKegD"></dm-episode>
-
-		<dm-episode title="Dice: Your Best Isn't Good Enough"
-			description="Josh and Terran talk about the different options for dice systems and their advantages and disadvantages including implimenting Advantage and Disadvanage."
-			spotify="465VrgYgRMZ2O8d0KXiZMt"></dm-episode>
+		<!-- Page contents will be inserted here by navigation code -->
 	</main>
 
-	<!-- Section Footer -->
-	<footer id="page_footer">
-		<p style="text-align: center; margin-bottom: 5px;">Thanks for listening &lt;3</p>
+	<!-- Footer Bar -->
+	<div class="page-header-bar"></div>
+	<footer class="page-footer">
+		<p style="margin-bottom: 15px;">Thanks for listening &lt;3</p>
+		<div class="horizontal-line"></div>
+		<nav class="nav-links">
+			<ul>
+				<li><button onclick="changePage(Pages.Home)">Home</button></li>
+				<li><button onclick="changePage(Pages.Episodes)">Episodes</button></li>
+				<li><button onclick="changePage(Pages.About)">About</button></li>
+			</ul>
+		</nav>
+		<nav class="nav-links">
+			<ul>
+				<li><button onclick="openLink(SpotifyURL)">
+						<img class="nav-link-img" src="./logo_spotify_small.png"></img>
+					</button></li>
+				<li><button onclick="openLink(InstagramURL)">
+						<img class="nav-link-img" src="./logo_instagram_small.png"></img>
+					</button></li>
+				<li><button onclick="openLink(YoutubeURL)">
+						<img class="nav-link-img" src="./logo_youtube_small.png"></img>
+					</button></li>
+			</ul>
+		</nav>
 		<p class="copyright">© 2024 The DiceMakers</p>
 	</footer>
 
-	<!-- Episode Element Definition -->
+	<!-- Custom HTML Element: EpisodeElement -->
 	<script type="text/javascript">
 		class EpisodeElement extends HTMLElement {
 			static observedAttributes = ["img"];
@@ -295,6 +373,42 @@
 			}
 		}
 		customElements.define("dm-episode", EpisodeElement);
+	</script>
+
+	<!-- Navigation -->
+	<script type="text/javascript">
+		async function changePage(pageID) {
+			if (pageID === undefined || pageID === null || pageID === "")
+				return;
+
+			let contents = document.getElementById("page-contents");
+			try {
+				let response = await fetch(`./${pageID}.html`);
+				if (response.ok)
+					contents.innerHTML = await response.text();
+				else
+					contents.innerHTML = `<div style="padding: 50px; color: var(--color-text-light);">Page Not Found!<div>`
+
+				history.pushState({ "page": pageID }, pageID, `#${pageID}`);
+			}
+			catch { }
+		}
+		function openLink(url) {
+			window.open(url, '_blank').focus();
+		}
+
+		// Load the Home Page by default
+		window.onload = () => {
+			let page = window.location.hash;
+			if (page !== '')
+				changePage(page.substring(1));
+			else
+				changePage(Pages.Home);
+		}
+		window.addEventListener("popstate", function (e) {
+			if (e.state.page != null)
+				changePage(e.state.page);
+		});
 	</script>
 </body>
 
