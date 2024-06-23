@@ -37,8 +37,7 @@
 		--color-base: #3c455e;
 		--color-light: #7284af;
 		--color-lighter: #d6d4ce;
-		--color-dark: #8d4764;
-		--color-darker: #5e3141;
+		--color-lighter-transparent: #d6d4ce66;
 		--color-text: #6b6661;
 		--color-text-light: #d6d4ce;
 		--color-text-dark: black;
@@ -277,9 +276,9 @@
 				<li><button onclick="openLink(InstagramURL)">
 						<img class="nav-link-img" src="./logo_instagram_small.png"></img>
 					</button></li>
-				<li><button onclick="openLink(YoutubeURL)">
+				<!-- <li><button onclick="openLink(YoutubeURL)">
 						<img class="nav-link-img" src="./logo_youtube_small.png"></img>
-					</button></li>
+					</button></li> -->
 			</ul>
 		</nav>
 	</header>
@@ -310,9 +309,9 @@
 				<li><button onclick="openLink(InstagramURL)">
 						<img class="nav-link-img" src="./logo_instagram_small.png"></img>
 					</button></li>
-				<li><button onclick="openLink(YoutubeURL)">
+				<!-- <li><button onclick="openLink(YoutubeURL)">
 						<img class="nav-link-img" src="./logo_youtube_small.png"></img>
-					</button></li>
+					</button></li> -->
 			</ul>
 		</nav>
 		<p class="copyright">© 2024 The DiceMakers</p>
@@ -330,7 +329,7 @@
 				let title = this.attributes.title?.value ?? '';
 				let text = this.attributes.description?.value ?? '';
 				let spotify = this.attributes.spotify?.value ?? '';
-				let youtube = this.attributes.youtube?.value ?? '';
+				// let youtube = this.attributes.youtube?.value ?? '';
 
 				let html = `
 				<div class='dm-episode'>
@@ -343,8 +342,8 @@
 					<div class="dm-episode-links">`
 					if (spotify !== '')
 						html += `<a href="https://open.spotify.com/episode/${spotify}">Listen on Spotify</a>`;
-					if (youtube !== '')
-						html += `<a href="https://www.youtube.com/watch?v=${youtube}">Listen on YouTube</a>`;
+					// if (youtube !== '')
+					// 	html += `<a href="https://www.youtube.com/watch?v=${youtube}">Listen on YouTube</a>`;
 					html += `
 					</div>`;
 				}
