@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Tab Icon / Title -->
+	<link rel="icon" href="d20.png">
+	<title>DiceMakers - The Design Podcast</title>
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<style>
+	:root {
+		--color-base: #383a7e;
+		--color-light: #5569a7;
+		--color-lighter: #9aafd3;
+		--color-dark: #8d4764;
+		--color-darker: #5e3141;
+		--color-text: white;
+		--color-text-dark: black;
+
+		--title-shadow: #030303 2px 2px 0px
+	}
+
+	body {
+		background-color: var(--color-base);
+		color: var(--color-text);
+		font-family: "Roboto", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0px;
+	}
+
+	#root {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		margin: 0;
+	}
+
+	#page_header {
+		padding: 20px;
+		background-color: var(--color-base);
+	}
+
+	.title {
+		font-family: "Bebas Neue", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 300%;
+		text-align: center;
+		color: var(--color-lighter);
+		text-shadow: var(--title-shadow);
+	}
+
+	.subtitle {
+		font-size: 150%;
+	}
+
+	.no-shadow {
+		text-shadow: none !important;
+	}
+
+	.page-trailer {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		display: grid;
+		height: fit-content;
+	}
+
+	.page-trailer>.bg-img {
+		grid-area: 1/1;
+		grid-column: 0;
+		grid-row: 0;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		position: absolute;
+		z-index: -10;
+	}
+
+	.page-trailer>.trailer-content {
+		grid-area: 1/1;
+		grid-column: 0;
+		grid-row: 0;
+		color: var(--color-text-dark);
+		margin: 30px
+	}
+
+	.page-trailer>*>.description {
+		background-color: rgba(256, 256, 256, 0.5);
+		border-radius: 10px;
+		margin: 50px;
+		padding: 10px;
+		max-width: 300px;
+	}
+
+	#page-contents {
+		background-color: var(--color-light);
+		padding-top: 20px;
+		flex-grow: 1;
+		justify-content: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#page_footer {
+		padding: 20px;
+		background-color: var(--color-base);
+	}
+
+	.section-title {
+		font-family: "Bebas Neue", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 250%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-shadow: var(--title-shadow);
+	}
+
+	.dm-episode {
+		background-color: var(--color-base);
+		min-width: 600px;
+		width: 700px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin: 10px;
+		border-radius: 20px;
+		padding: 10px;
+	}
+
+	.dm-episode-player {
+		margin-top: 20px;
+		margin-bottom: -70px;
+		width: 100%;
+	}
+
+	.dm-episode-text {
+		display: block;
+		text-align: center;
+		max-width: 80%;
+		padding: 10px;
+	}
+
+	.dm-episode-links {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.dm-episode-links>* {
+		padding: 5px;
+	}
+
+	.copyright {
+		text-align: center;
+		color: var(--color-lighter)
+	}
+</style>
+
+<!-- Josh's Fancy Triangles -->
+<style>
+	.triangle {
+		width: 40px;
+		height: 40px;
+		background: var(--color-darker);
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	}
+</style>
+
+<body id="root">
+	<!-- Header Bar -->
+	<header id="page_header">
+		<h1 class="title">Dice Makers</h1>
+		<p class="title subtitle">Roll with Guidance</p>
+	</header>
+
+	<!-- Section: Trailer & Info -->
+	<div class="page-trailer">
+		<img class="bg-img" src="GridBackground.png" alt=""></img>
+		<div class="trailer-content"
+			style="display: flex; flex-direction: row; align-items: center; justify-self: center;">
+			<div class="description">
+				<h1 class="section-title no-shadow">The Design Podcast</h1>
+				<p>Here is a bunch of text that Terran will write describing just how awesome we are and how much you
+					should listen to our podcast. If you are seeing this, Terran has some work to do. If you are
+					Terran... stop reading this and get back to work.</p>
+			</div>
+			<div>
+				<iframe width="300" height="300" src="https://www.youtube.com/embed/WynRfLMKgRw?si=z0Ggtf_gfTZPkFeU"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+	<!-- Section: Episodes List -->
+	<main id="page-contents">
+		<h2 class="section-title">Latest Episode</h2>
+		<dm-episode title="Robots: All the fun of genocide."
+			description="A Narrative episode where Josh and Terran brainstorm ideas for the world and lore. Josh wants to cut off limbs, Terran wants to kill humanity."
+			spotify="0vVdRJQel7k0zYrSsmZZP4"></dm-episode>
+
+		<dm-episode title="The Non-Combat Episode"
+			description="Josh and Terran explore if combat is required for ttrpg's and how non-combat encounters can be implemented."
+			spotify="3RFhZh6QWMoma1GK5Lxuyj"></dm-episode>
+
+		<dm-episode title="Narratives: Anything is Masterable"
+			description="Josh and Terran talk about what narrative they want to tell with their game system, talk about an alternative leveling system, and the idea of multiple eras."
+			spotify="63qUqrrWzgsoCR5ATEKegD"></dm-episode>
+
+		<dm-episode title="Dice: Your Best Isn't Good Enough"
+			description="Josh and Terran talk about the different options for dice systems and their advantages and disadvantages including implimenting Advantage and Disadvanage."
+			spotify="465VrgYgRMZ2O8d0KXiZMt"></dm-episode>
+	</main>
+
+	<!-- Section Footer -->
+	<footer id="page_footer">
+		<p style="text-align: center; margin-bottom: 5px;">Thanks for listening &lt;3</p>
+		<p class="copyright">© 2024 The DiceMakers</p>
+	</footer>
+
+	<!-- Episode Element Definition -->
+	<script type="text/javascript">
+		class EpisodeElement extends HTMLElement {
+			static observedAttributes = ["img"];
+
+			constructor() { super(); }
+			connectedCallback() { this.updateHTML(); }
+
+			updateHTML() {
+				let title = this.attributes.title?.value ?? '';
+				let text = this.attributes.description?.value ?? '';
+				let spotify = this.attributes.spotify?.value ?? '';
+				let youtube = this.attributes.youtube?.value ?? '';
+
+				let html = `
+				<div class='dm-episode'>
+					<h3>${title}</h3>
+					<div class="dm-episode-text">${text}</div>`;
+
+				// Links
+				if (false) { // Disabled at the moment
+					html += `
+					<div class="dm-episode-links">`
+					if (spotify !== '')
+						html += `<a href="https://open.spotify.com/episode/${spotify}">Listen on Spotify</a>`;
+					if (youtube !== '')
+						html += `<a href="https://www.youtube.com/watch?v=${youtube}">Listen on YouTube</a>`;
+					html += `
+					</div>`;
+				}
+
+				// Spotify Embedded Player
+				if (spotify !== '') {
+					html += `
+					<div class="dm-episode-player">
+						<iframe style="border-radius:12px"
+							src="https://open.spotify.com/embed/episode/${spotify}?utm_source=generator&t=0"
+							width="100%"
+							frameBorder="0"
+							allowfullscreen=""
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+							loading="lazy">
+							<a href="https://open.spotify.com/episode/${spotify}">Listen on Spotify</a>
+						</iframe>
+					</div>`;
+				}
+
+
+				html += `
+				</div>`;
+
+				this.innerHTML = html;
+			}
+		}
+		customElements.define("dm-episode", EpisodeElement);
+	</script>
+</body>
+
+</html>
