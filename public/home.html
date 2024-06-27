@@ -14,6 +14,7 @@
     }
 
     .trailer-description {
+        transition-duration: 1s;
         background-color: var(--color-lighter-transparent);
         color: var(--color-text);
         border-radius: 10px;
@@ -21,7 +22,12 @@
         padding: 20px;
         max-width: 700px;
     }
+    .trailer-description:hover {
+        transition-duration: 500ms;
+        background-color: var(--color-lighter-transparent-slighthover); /* Apply hover color */
+    }
 
+    
 
     .trailer-container {
         display: inline-grid;
@@ -84,11 +90,24 @@
     }
 
     .summary-section {
+        transition-duration: 1s;
         max-width: 700px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        
+        background-color: var(--color-lighter-transparent);
+        color: var(--color-text);
+        border-radius: 10px;
+        margin: 25px;
+        padding: 20px;
+        max-width: 700px;
     }
+    .summary-section:hover {
+        transition-duration: 500ms;
+        background-color: var(--color-lighter-transparent-hover); /* Apply hover color */
+    }
+    
 </style>
 
 <!-- Section: Trailer & Info -->

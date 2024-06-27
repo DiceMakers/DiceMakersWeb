@@ -1,10 +1,18 @@
 <style>
     .about-profile {
+        transition-duration: 1s;
         display: flex;
         flex-direction: row;
         background-color: var(--color-lighter-transparent);
         margin-bottom: 10px;
         border-radius: 10px;
+        transition: background-color 0.3s; /* Smooth transition */
+    }
+
+
+    .about-profile:hover {
+        transition-duration: 500ms;
+        background-color: var(--color-lighter-transparent-hover); /* Apply hover color */
     }
 
     .about-profile>* {

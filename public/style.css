@@ -1,9 +1,11 @@
 :root {
-    --color-base: #3c455e;
+    --color-base: #34415F;
     --color-light: #7284af;
     --color-lighter: #d6d4ce;
-    --color-lighter-transparent: #d6d4ce66;
-    --color-text: #6b6661;
+    --color-lighter-transparent: #d6d4ce88;
+    --color-lighter-transparent-hover:#d6d4cee1;
+    --color-lighter-transparent-slighthover:#d6d4cea1;
+    --color-text: #5c5753;
     --color-text-light: #d6d4ce;
     --color-text-dark: black;
 
@@ -168,12 +170,12 @@ p {
 }
 
 .page-section-mapbg {
-    background: url(./bg_map.png);
+    background: url(./bg_map_Darker_Defocus.png);
     background-size: cover;
 }
 
 .page-section-gridbg {
-    background: url(./bg_grid.png);
+    background: url(./bg_grid_Darker.png);
     background-size: cover;
 }
 
