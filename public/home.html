@@ -8,6 +8,27 @@
         max-width: 700px;
     }
 
+    .trailer-container {
+        display: inline-grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .trailer-video {
+        grid-area: 1/1;
+        grid-row: 0;
+        grid-column: 0;
+    }
+
+    .trailer-border-img {
+        width: calc(100% + 30px);
+        margin-top: -10px;
+        grid-area: 1/1;
+        grid-row: 0;
+        grid-column: 0;
+        z-index: -1;
+    }
+
     .latest-episode-img {
         width: 300px;
         height: 300px;
@@ -47,17 +68,22 @@
         <div class="page-description">
             <h1 class="section-title section-title-dark">The Design Podcast</h1>
             <p>Putting knowledge to practice, Terran and Josh use their combined two decades of designing games to build
-                a new TTRPG, including mechanics, world, lore and story. <br /> 
+                a new TTRPG, including mechanics, world, lore and story. <br />
                 In the process, they examine existing TTRPG's and explore the briliance in their designs,
                 and share their opinions on game design in general. </p>
         </div>
         <div style="padding-top: 250px; padding-bottom: 250px;">
-            <iframe width="550" height="280" src="https://www.youtube.com/embed/WynRfLMKgRw?si=z0Ggtf_gfTZPkFeU"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="trailer-container">
+                <div class="trailer-video">
+                    <iframe width="550" height="280" src="https://www.youtube.com/embed/WynRfLMKgRw?si=z0Ggtf_gfTZPkFeU"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <img class="trailer-border-img" src="./SketchAroundVid.png"></img>
+            </div>
         </div>
-        
+
     </div>
 </div>
 
@@ -65,13 +91,16 @@
 <div class="page-section page-section-default">
     <h2 class="section-title">Latest Episode</h2>
     <div style="display: flex; flex-direction: row;">
-        <img class="latest-episode-img"  src="./last_episode.png" onclick="openLink(LatestSpotifyURL)"></img>
+        <img class="latest-episode-img" src="./last_episode.png" onclick="openLink(LatestSpotifyURL)"></img>
         <div class="latest-episode-details">
             <h2 id="lastep-title">Cards For Realpolitik.</h2>
-            <div class="lastep-text">Terran pitches his system for creating  <br /> complex political environments and  <br /> getting the players to fully buy in.
-                <br /> Josh fills the idea out and improves on it.</div>
+            <div class="lastep-text">Terran pitches his system for creating <br /> complex political environments and
+                <br /> getting the players to fully buy in.
+                <br /> Josh fills the idea out and improves on it.
+            </div>
             <div class="latest-episode-links">
-                <button class="nav-button" onclick="openLink(LatestSpotifyURL)" style="padding-left: 120px;"><img class="latest-episode-link-img" src="./logo_spotify.png" style="height: 50px;"></img></button>
+                <button class="nav-button" onclick="openLink(LatestSpotifyURL)" style="padding-left: 120px;"><img
+                        class="latest-episode-link-img" src="./logo_spotify.png" style="height: 50px;"></img></button>
                 <!-- <button class="nav-button" onclick="openLink(LatestYoutubeURL)"><img class="latest-episode-link-img"
                         src="./logo_youtube.png"></img></button> -->
             </div>
@@ -80,16 +109,19 @@
 </div>
 
 <!-- Section: Podcast Summary -->
-<div class="page-section page-section-gridbg" style="flex-grow: 1; padding-bottom: 100px; padding-top: 80px;" >
+<div class="page-section page-section-gridbg" style="flex-grow: 1; padding-bottom: 100px; padding-top: 80px;">
     <h2 class="section-title section-title-dark">Podcast Summary</h2>
     <p>The world ended a long time ago.<br />
         The atmosphere has thinned to the point that it no longer reflects a blue sky except at sunset.<br />
-        Most organic life is dead, with the only exception being deep sea creatures and <br />the artificial gardens managed by the survivors.<br />
+        Most organic life is dead, with the only exception being deep sea creatures and <br />the artificial gardens
+        managed by the survivors.<br />
         Automatons.<br />
         Creatures built for the use of humanity have outlived their creators.<br />
         Now a new civilization is being built.<br />
         <br>
-        Using a card game to build the political structures these automatons develop, and <br />using a dice-curve rpg system (2d6) to roleplay as survivors.<br />
+        Using a card game to build the political structures these automatons develop, and <br />using a dice-curve rpg
+        system (2d6) to roleplay as survivors.<br />
         <br>
-        Join Terran and Josh Tuesdays at 5pm as they design the future of this civilization.</p>
+        Join Terran and Josh Tuesdays at 5pm as they design the future of this civilization.
+    </p>
 </div>
