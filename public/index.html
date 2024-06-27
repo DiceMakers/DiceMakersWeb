@@ -124,8 +124,10 @@
 
 				let html = `
 				<div class='dm-episode'>
-					<h3>${title}</h3>
-					<div class="dm-episode-text">${text}</div>`;
+					<div class="dm-episode-text">
+						<h3>${title}</h3>
+						<p>${text}</p>
+					</div>`;
 
 				// Links
 				if (false) { // Disabled at the moment
@@ -142,6 +144,9 @@
 				// Spotify Embedded Player
 				if (spotify !== '') {
 					html += `
+					<div class="dm-episode-link">
+						<a href="https://open.spotify.com/episode/${spotify}"><img src="./logo_spotify.png"></img></a>
+					</div>
 					<div class="dm-episode-player">
 						<iframe style="border-radius:12px"
 							src="https://open.spotify.com/embed/episode/${spotify}?utm_source=generator&t=0"

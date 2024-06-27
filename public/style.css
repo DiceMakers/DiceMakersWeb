@@ -86,7 +86,6 @@ p {
 .page-bar {
     background-color: var(--color-light);
     height: 3px;
-    width: 100vw;
 
     /* Shift down to prevent pixel gaps */
     margin-bottom: -1px;
@@ -232,10 +231,9 @@ p {
 /* #region Episode */
 
 .dm-episode {
-    /* background-color: var(--color-light); */
-    background: url("bg_grid.png");
-    background-size: cover;
-    color: var(--color-text);
+    background-color: var(--color-base);
+    color: var(--color-text-light);
+    border-radius: 10px;
     min-width: 600px;
     width: 700px;
 
@@ -246,12 +244,29 @@ p {
     margin: 5px;
     border-radius: 20px;
     padding: 20px;
+    padding-top: 40px;
 }
 
 .dm-episode-player {
     margin-top: 20px;
     margin-bottom: -70px;
     width: 100%;
+    
+    /* Hide by default (display with @media query below) */
+    display: none;
+}
+
+.dm-episode-link {
+    padding: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .dm-episode-player {
+        display: block;
+    }
+    .dm-episode-link {
+        display: none;
+    }
 }
 
 .dm-episode-text {
@@ -259,6 +274,9 @@ p {
     text-align: center;
     max-width: 80%;
     padding: 10px;
+}
+.dm-episode-text>h3{
+    margin-bottom: 30px;
 }
 
 .dm-episode-links {
