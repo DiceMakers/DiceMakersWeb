@@ -39,15 +39,53 @@ p {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    width: 100%;
 }
 
 .page-header {
-    background-color: var(--color-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: fit-content;
+
+    padding-left: 50px;
+    padding-right: 50px;
+    width: calc(100% - 100px);
 }
 
-.page-header-bar {
+.header-contents {
+    min-height: 100px;
+    background-color: var(--color-base);
+
+    /* Align to bottom */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-items: center;
+}
+
+.header-spacer {
+    flex-grow: 1;
+    min-width: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .header-contents {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        /* min-width: 50px; */
+    }
+}
+
+.page-bar {
     background-color: var(--color-light);
     height: 3px;
+    width: 100vw;
+
+    /* Shift down to prevent pixel gaps */
+    margin-bottom: -1px;
 }
 
 .nav-links {
@@ -73,6 +111,7 @@ p {
 
 .nav-links>ul>li>button {
     padding: 10px;
+    margin-bottom: -5px;
     margin-right: 5px;
     background-color: transparent;
     border: none;
@@ -81,7 +120,7 @@ p {
     font-family: var(--font-body);
     font-weight: 500;
     font-style: normal;
-    font-size: 20px;
+    font-size: 32px;
     cursor: pointer;
 }
 
@@ -90,24 +129,8 @@ p {
 }
 
 .nav-link-img {
-    height: 1.5em;
+    height: 32px;
     margin-bottom: -5px;
-}
-
-.page-title {
-    background-color: var(--color-base);
-    border: none;
-    cursor: pointer;
-}
-
-.page-title>h1 {
-    font-family: var(--font-title);
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3em;
-    text-align: center;
-    color: var(--color-lighter);
-    text-shadow: var(--title-shadow);
 }
 
 .subtitle {
@@ -166,8 +189,8 @@ p {
     font-weight: 400;
     font-style: normal;
     font-size: 250%;
-    margin-top: 30px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .section-title-dark {
@@ -228,3 +251,26 @@ p {
 }
 
 /* #endregion Episode */
+
+/* #region Logo */
+
+.logo {}
+
+.logo>button {
+    background-color: var(--color-base);
+    border: none;
+    cursor: pointer;
+}
+
+.logo>button>h1 {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    text-align: center;
+    color: var(--color-lighter);
+    text-shadow: var(--title-shadow);
+    line-height: 64px;
+}
+
+/* #endregion Logo */

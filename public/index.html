@@ -37,30 +37,36 @@
 
 <body id="root">
 	<!-- Header Bar -->
-	<header class="page-header" style="display: flex; justify-content: center;">
-		<div style="display: flex;">
-			<button class="page-title" onclick="changePage(Pages.Home)">
-				<h1 style="align-self: flex-end;">Dice Makers</h1>
-			</button>
-		</div>
-		<nav class="nav-links" style="padding-left: 100px;">
-			<ul>
-				<li><button onclick="changePage(Pages.Home)">Home</button></li>
-				<li><button onclick="changePage(Pages.Episodes)">Episodes</button></li>
-				<li><button onclick="changePage(Pages.About)">About</button></li>
-				<li><button onclick="openLink(SpotifyURL)">
-						<img class="nav-link-img" src="./logo_spotify_small.png"></img>
-					</button></li>
-				<li><button onclick="openLink(InstagramURL)">
-						<img class="nav-link-img" src="./logo_instagram_small.png"></img>
-					</button></li>
-				<!-- <li><button onclick="openLink(YoutubeURL)">
+	<header class="page-header">
+		<div class="header-contents">
+			<div class="logo">
+				<button onclick="changePage(Pages.Home)">
+					<h1 style="align-self: flex-end;">Dice&nbsp;Makers</h1>
+				</button>
+			</div>
+			<div class="header-spacer"></div>
+			<!-- Grow space between Logo & Links -->
+			<div>
+				<nav class="nav-links">
+					<ul>
+						<li><button onclick="changePage(Pages.Home)">Home</button></li>
+						<li><button onclick="changePage(Pages.Episodes)">Episodes</button></li>
+						<li><button onclick="changePage(Pages.About)">About</button></li>
+						<li><button onclick="openLink(SpotifyURL)">
+								<img class="nav-link-img" src="./logo_spotify_small.png"></img>
+							</button></li>
+						<li><button onclick="openLink(InstagramURL)">
+								<img class="nav-link-img" src="./logo_instagram_small.png"></img>
+							</button></li>
+						<!-- <li><button onclick="openLink(YoutubeURL)">
 						<img class="nav-link-img" src="./logo_youtube_small.png"></img>
 					</button></li> -->
-			</ul>
-		</nav>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</header>
-	<div class="page-header-bar"></div>
+	<div class="page-bar"></div>
 
 	<!-- Page Contents -->
 	<main id="page-contents">
@@ -68,7 +74,7 @@
 	</main>
 
 	<!-- Footer Bar -->
-	<div class="page-header-bar"></div>
+	<div class="page-bar"></div>
 	<footer class="page-footer">
 		<p style="margin-bottom: 15px;">Thanks for listening &lt;3</p>
 		<div class="horizontal-line"></div>
